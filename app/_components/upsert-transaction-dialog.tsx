@@ -4,7 +4,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "./ui/input";
 import { MoneyInput } from "./money-input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { PAYMENT_METHODS_OPTIONS, TRANSACTION_CATEGORIES_OPTIONS, TRANSACTION_TYPES_OPTIONS } from "../_constants/transaction";
+import { PAYMENT_METHODS_OPTIONS, TRANSACTION_CATEGORIES_OPTIONS, TRANSACTION_TYPES_OPTIONS } from "../_constant/transaction";
 import { DatePicker } from "./ui/date-picker";
 import { z } from "zod";
 import { TransactionCategory, TransactionPaymentMethod, TransactionType } from "@prisma/client";

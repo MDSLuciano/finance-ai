@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
+
 const mulish = Mulish({ subsets: ["latin-ext"] });
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
         className={`${mulish.className} dark antialiased`}
       >
         <ClerkProvider appearance={{
-          baseTheme:dark
+          baseTheme: dark
         }}>
           {children}
         </ClerkProvider>
