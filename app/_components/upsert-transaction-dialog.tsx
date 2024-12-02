@@ -87,7 +87,7 @@ const UpsertTransactionDialog = ({
             <DialogTrigger asChild></DialogTrigger>
             <DialogContent>
                 <DialogHeader>
-                    <DialogTitle>{isUpdate ? "Editar" : "Adicionar"} transação</DialogTitle>
+                    <DialogTitle>{isUpdate ? "Atualizar" : "Criar"} transação</DialogTitle>
                     <DialogDescription>Insira as informações abaixo</DialogDescription>
                 </DialogHeader>
 
@@ -134,7 +134,8 @@ const UpsertTransactionDialog = ({
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Tipo</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select 
+                                    onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Selecione um tipo de transação" />
@@ -159,7 +160,10 @@ const UpsertTransactionDialog = ({
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Categoria</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select 
+                                        onValueChange={field.onChange} 
+                                        defaultValue={field.value}
+                                    >
                                         <FormControl>
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Selecione uma categoria" />
