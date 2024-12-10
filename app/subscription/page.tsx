@@ -10,9 +10,7 @@ const SubscriptionPage = async () => {
     if (!userId) {
         redirect("/login");
     }
-    const handleAcquirePlanClick = async() => {
-
-    };
+    
     return (
         <>
             <NavBar />
