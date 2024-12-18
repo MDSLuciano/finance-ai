@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import NavBar from "../_components/navbar";
 import { ScrollArea } from "../_components/ui/scroll-area";
+import { canUserAddTransaction } from "../_data/can-user-add-transaction";
 
 
 const TransactionsPage = async () => {
@@ -19,6 +20,7 @@ const TransactionsPage = async () => {
             userId,
         },
     });
+    const userCanAddTransaction = await canUserAddTransaction();
     return (
         <>
             <NavBar />
@@ -27,7 +29,7 @@ const TransactionsPage = async () => {
                 {/* TÍTULO E BOTÃO */}
                 <div className="flex w-full justify-between items-center p-6">
                     <h1 className="font-bold text-2xl">Transações</h1>
-                    <AddTransactionButton />
+                    <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
                 </div>
                 <ScrollArea>
                     <DataTable columns={transactionColumns} data={transactions} />

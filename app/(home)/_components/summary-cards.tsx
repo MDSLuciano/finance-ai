@@ -1,16 +1,17 @@
 import { PiggyBankIcon, TrendingDownIcon, TrendingUpIcon, WalletIcon } from "lucide-react";
 import SummaryCard from "./summary-card";
 
-interface SummaryCardsProps {
+interface SummaryCards {
     month: string;
     balance: number;
     depositsTotal: number;
     investmentsTotal: number;
     expensesTotal: number;
+    userCanAddTransaction?: boolean;
 }
 
 
-const SummaryCards = async ({ balance, depositsTotal, investmentsTotal, expensesTotal }: SummaryCardsProps) => {
+const SummaryCards = async ({ balance, depositsTotal, investmentsTotal, expensesTotal, userCanAddTransaction, }: SummaryCards) => {
     return (
         <div className="space-y-6">
 
@@ -19,6 +20,7 @@ const SummaryCards = async ({ balance, depositsTotal, investmentsTotal, expenses
                 title="Saldo"
                 amount={balance}
                 size="large"
+                userCanAddTransaction={userCanAddTransaction}
             />
             {/* OUTROS CARDS */}
             <div className="grid grid-cols-3 gap-6">

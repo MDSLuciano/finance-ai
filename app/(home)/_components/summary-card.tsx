@@ -6,9 +6,10 @@ interface SummaryCardProps {
     title: string;
     amount: number;
     size?: "small" | "large";
+    userCanAddTransaction?: boolean;
 }
 
-const SummaryCard = ({ icon, title, amount, size = "small" }: SummaryCardProps) => {
+const SummaryCard = ({ icon, title, amount, size = "small", userCanAddTransaction }: SummaryCardProps) => {
     return (
         <Card className={`${size === "large" || title === "Investido" ? "bg-white bg-opacity-5" : ""}`}>
             <CardHeader className="flex-row w-full items-center gap-4">
@@ -24,7 +25,7 @@ const SummaryCard = ({ icon, title, amount, size = "small" }: SummaryCardProps) 
                 </p>
 
                 {size === "large" && (
-                    <AddTransactionButton />
+                    <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
                 )}
             </CardContent>
         </Card>
